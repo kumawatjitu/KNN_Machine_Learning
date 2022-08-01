@@ -1,4 +1,4 @@
-%%writefile app.py
+
 import streamlit as st 
 from PIL import Image
 import pickle
@@ -7,9 +7,9 @@ import matplotlib.pyplot as plt
 import pandas as pd
 st.set_option('deprecation.showfileUploaderEncoding', False)
 # Load the pickled model
-pickle_in = open("/content/drive/My Drive/finalized_modelKNN.pkl","rb")
+pickle_in = open("/finalized_modelKNN.pkl","rb")
 model=pickle.load(pickle_in)
-dataset= pd.read_csv('/content/drive/My Drive/Social_Network_Ads.csv')
+dataset= pd.read_csv('Social_Network_Ads.csv')
 X = dataset.iloc[:, [1,2,3]].values
 from sklearn.preprocessing import LabelEncoder
 labelencoder_X = LabelEncoder()
